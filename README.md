@@ -13,6 +13,16 @@ Demo project showcasing test coverage with Codecov integration
 - Multiple Python version testing (3.10, 3.11, 3.12)
 - 100% test coverage
 
+## Documentation
+
+Comprehensive guides and documentation:
+
+- **[CONTRIBUTING.md](CONTRIBUTING.md)**: Contribution guidelines, code quality standards, and PR process
+- **[DEVELOPMENT.md](DEVELOPMENT.md)**: Complete development setup, workflow, and troubleshooting guide
+- **[CODECOV.md](CODECOV.md)**: Codecov integration, configuration, and usage guide
+- **[TESTING.md](TESTING.md)**: Testing best practices, pytest usage, and achieving high coverage
+- **[CI_CD.md](CI_CD.md)**: CI/CD pipeline documentation and GitHub Actions workflow details
+
 ## Setup
 
 1. Clone the repository:
