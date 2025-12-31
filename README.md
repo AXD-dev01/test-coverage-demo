@@ -1,7 +1,7 @@
 # Test Coverage Demo
 
-[![codecov](https://codecov.io/gh/fatculo2508/test-coverage-demo/branch/master/graph/badge.svg)](https://codecov.io/gh/fatculo2508/test-coverage-demo)
-[![Python CI with Coverage](https://github.com/fatculo2508/test-coverage-demo/actions/workflows/test.yml/badge.svg)](https://github.com/fatculo2508/test-coverage-demo/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/AXD-dev01/test-coverage-demo/branch/master/graph/badge.svg)](https://codecov.io/gh/AXD-dev01/test-coverage-demo)
+[![Python CI with Coverage](https://github.com/AXD-dev01/test-coverage-demo/actions/workflows/test.yml/badge.svg)](https://github.com/AXD-dev01/test-coverage-demo/actions/workflows/test.yml)
 
 Demo project showcasing test coverage with Codecov integration
 
@@ -17,7 +17,7 @@ Demo project showcasing test coverage with Codecov integration
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/fatculo2508/test-coverage-demo.git
+git clone https://github.com/AXD-dev01/test-coverage-demo.git
 cd test-coverage-demo
 ```
 
@@ -68,8 +68,8 @@ test-coverage-demo/
 
 ## Coverage Reports
 
-- **Codecov Dashboard**: https://app.codecov.io/github/fatculo2508/test-coverage-demo
-- **GitHub Actions**: https://github.com/fatculo2508/test-coverage-demo/actions
+- **Codecov Dashboard**: https://app.codecov.io/github/AXD-dev01/test-coverage-demo
+- **GitHub Actions**: https://github.com/AXD-dev01/test-coverage-demo/actions
 
 ## Example Calculator Module
 
