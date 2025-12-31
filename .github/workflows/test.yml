@@ -52,7 +52,7 @@ jobs:
 
     - name: Run tests with pytest
       run: |
-        pytest --cov=src --cov-report=xml --cov-report=term-missing --cov-branch
+        pytest --cov=src --cov-report=xml --cov-report=term-missing --cov-branch --junitxml=junit.xml -o junit_family=legacy
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v5
@@ -63,6 +63,14 @@ jobs:
         name: codecov-python-${{ matrix.python-version }}
         fail_ci_if_error: false  # Don't fail if Codecov upload has issues
         verbose: true
+
+    - name: Upload test results to Codecov
+      if: ${{ !cancelled() }}
+      uses: codecov/test-results-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        flags: python-${{ matrix.python-version }}
+        name: test-results-python-${{ matrix.python-version }}
 
     # Alternative: Using Codecov CLI directly
     # - name: Install Codecov CLI
