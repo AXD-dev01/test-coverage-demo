@@ -1,5 +1,4 @@
-# Codecov Configuration
-# Place this file in your project root as codecov.yml
+# Codecov Configuration for Python Project
 # Documentation: https://docs.codecov.com/docs/codecov-yaml
 
 # Coverage configuration
@@ -8,11 +7,11 @@ coverage:
   round: down   # Round down or up
   range: "70...100"  # Color range (red to green)
 
-  # Status checks (GitHub/GitLab)
+  # Status checks (GitHub)
   status:
     project:
       default:
-        target: 80%           # Target coverage
+        target: 80%           # Target coverage (you have 100%!)
         threshold: 2%         # Allow 2% drop
         if_ci_failed: error   # Fail if CI fails
         informational: false  # Block PR if below target
@@ -27,73 +26,54 @@ coverage:
       default:
         if_ci_failed: error
 
-# Comment configuration
+# Comment configuration for Pull Requests
 comment:
-  layout: "header, diff, files, footer"
+  layout: "header, diff, flags, files, footer"
   behavior: default  # Update the same comment
   require_changes: false
   require_base: false
   require_head: true
+  after_n_builds: 3  # Wait for all 3 Python versions before commenting
 
-# Pull request comments
-  after_n_builds: 1  # Wait for N builds before commenting
-
-# Flags for organizing coverage (e.g., frontend, backend, unit, integration)
+# Flags for organizing coverage by Python version
 flags:
-  unit:
-    paths:
-      - tests/unit
+  python-3.10:
     carryforward: true
 
-  integration:
-    paths:
-      - tests/integration
+  python-3.11:
     carryforward: true
 
-  frontend:
-    paths:
-      - src/frontend
+  python-3.12:
     carryforward: true
 
-  backend:
-    paths:
-      - src/backend
-    carryforward: true
-
-# Ignore paths
+# Ignore paths (don't measure coverage on these)
 ignore:
-  - "tests/**/*"
-  - "**/__tests__/**/*"
-  - "**/*.test.{js,jsx,ts,tsx}"
-  - "**/*.spec.{js,jsx,ts,tsx}"
-  - "**/node_modules/**/*"
-  - "**/venv/**/*"
-  - "**/__pycache__/**/*"
-  - "**/dist/**/*"
-  - "**/build/**/*"
-  - "**/.next/**/*"
-  - "**/coverage/**/*"
-  - "**/htmlcov/**/*"
-  - "**/*.config.{js,ts}"
-  - "**/setupTests.{js,ts}"
-
-# Parse coverage reports
-parsers:
-  gcov:
-    branch_detection:
-      conditional: yes
-      loop: yes
-      method: no
-      macro: no
+  - "tests/**/*"           # Don't measure test coverage
+  - "**/__pycache__/**/*"  # Python cache
+  - "**/venv/**/*"         # Virtual environment
+  - "**/htmlcov/**/*"      # Coverage HTML reports
+  - "**/.pytest_cache/**/*" # Pytest cache
+  - "**/dist/**/*"         # Distribution files
+  - "**/build/**/*"        # Build files
+  - "**/*.pyc"             # Compiled Python
+  - "setup.py"             # Setup script (if you add one)
 
 # GitHub checks configuration
 github_checks:
   annotations: true
 
-# Slack notifications (optional - requires setup)
+# Codecov bot configuration (using global org token)
+codecov:
+  max_report_age: 12h  # Reject reports older than 12 hours
+  require_ci_to_pass: yes
+  notify:
+    wait_for_ci: yes
+
+# Optional: Slack notifications
+# Uncomment and configure if you want Slack notifications
 # slack:
+#   url: "secret:SLACK_WEBHOOK_URL"
 #   notify: true
-#   after_n_builds: 1
+#   after_n_builds: 3
 #   branches:
-#     - main
 #     - master
