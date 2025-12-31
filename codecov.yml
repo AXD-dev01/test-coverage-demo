@@ -64,7 +64,7 @@ github_checks:
 
 # Codecov bot configuration (using global org token)
 codecov:
-  max_report_age: 12h  # Reject reports older than 12 hours
+  max_report_age: off  # Disable age check to prevent timestamp issues
   require_ci_to_pass: yes
   notify:
     wait_for_ci: yes
