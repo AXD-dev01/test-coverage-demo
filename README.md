@@ -93,7 +93,8 @@ Every push and pull request triggers:
 3. Type checking with mypy
 4. Test execution across Python 3.10, 3.11, and 3.12
 5. Coverage report upload to Codecov
-6. Coverage artifacts storage
+6. Test results and analytics upload to Codecov
+7. Coverage artifacts storage
 
 ## License
 
